@@ -1,14 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = props => {
   const state = useSelector(state => state.userLogin);
 
 
+//   const dispatch = useDispatch();
 
 
-  const { userInfo, loading, error } = state;
+
+//   const { userInfo, loading, error } = state;
+
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
@@ -33,7 +36,7 @@ const Navbar = props => {
                 Home <span className='sr-only'>(current)</span>
               </a>
             </li>
-            {!userInfo ? (
+            
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/login'>
@@ -46,7 +49,7 @@ const Navbar = props => {
                   </Link>
                 </li>
               </>
-            ) : (
+        
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/books'>
@@ -72,7 +75,7 @@ const Navbar = props => {
                   </Link>
                 </li>
               </>
-            )}
+            
           </ul>
         </div>
       </nav>
